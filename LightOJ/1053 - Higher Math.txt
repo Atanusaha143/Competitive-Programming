@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int c;
+    long long int a,b,d,x,y;
+    cin>>c;
+    for(int i=1; i<=c; i++)
+    {
+        cin>>a>>b>>d;
+        if(a>b && a>d)
+        {
+            x = a*a;
+            y = (b*b)+(d*d);
+        }
+        else if(b>a && b>d)
+        {
+            x = b*b;
+            y = (a*a)+(d*d);
+        }
+        else if(d>a && d>b)
+        {
+            x = d*d;
+            y = (a*a) + (b*b);
+        }
+        if(x==y)
+        {
+            cout<<"Case "<<i<<": yes"<<endl;
+        }
+        else
+        {
+            cout<<"Case "<<i<<": no"<<endl;
+        }
+    }
+    return 0;
+}

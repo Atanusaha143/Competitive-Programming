@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    int a,i,x;
+    cin>>a;
+    for(i=1;i<=a;i++)
+    {
+        cin>>s;
+         x=s.length();
+        if(x<=10)
+        {
+            cout<<s<<endl;
+        }
+        else
+        {
+            cout<<s[0]<<x-2<<s[x-1]<<endl;
+        }
+    }
+    return 0;
+}

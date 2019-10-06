@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,y;
+    string s;
+    cin>>s;
+    int a = s.size();
+ 
+    for(int i=0; i<a; i+=2)
+    {
+        if(s[i]=='R' || s[i]=='U' || s[i]=='D')
+        {
+            x = 1;
+        }
+        else
+        {
+            x=0;
+            break;
+        }
+    }
+ 
+    for(int i=1; i<a; i+=2)
+    {
+        if(s[i]=='L' || s[i]=='U' || s[i]=='D')
+        {
+            y = 1;
+        }
+        else
+        {
+            y=0;
+            break;
+        }
+ 
+    }
+    if(x==1 && y==1)
+    {
+        cout<<"Yes"<<endl;
+    }
+    else
+    {
+        cout<<"No"<<endl;
+    }
+ 
+    return 0;
+ 
+}

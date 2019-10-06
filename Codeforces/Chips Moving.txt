@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t,a,x=0,y=0;
+   cin>>t;
+   while(t--)
+   {
+       cin>>a;
+       if(a%2==0) x++;
+       else y++;
+   }
+   cout<<min(x,y);
+}

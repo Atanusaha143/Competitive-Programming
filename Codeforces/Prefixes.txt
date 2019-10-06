@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int b,sum=0;
+    cin>>b;
+    char arr[b];
+    for(int i=0; i<b; i++)
+     {
+         cin>>arr[i];
+     }
+ 
+    for (int j=0; j<b; j=j+2)
+    {
+        if(arr[j] == 'a' && arr[j+1]=='a')
+        {
+            arr[j]='b';
+            sum = sum + 1;
+        }
+        else if(arr[j] == 'b' && arr[j+1]=='b')
+        {
+            arr[j]='a';
+            sum = sum + 1;
+        }
+    }
+ 
+    cout<<sum<<endl;
+ 
+for(int k=0; k<b; k++)
+ 
+{
+    cout<<arr[k];
+}
+return 0;
+}

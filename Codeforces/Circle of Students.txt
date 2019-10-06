@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long test, i, input, arr[200];
+    cin>>test;
+    for(int j=0; j<test; j++)
+    {
+        cin>>input;
+        for(i=0; i<input; i++)
+        {
+            cin>>arr[i];
+        }
+        i=1;
+        while((abs(arr[i]-arr[i-1]) ==1 || abs(arr[i]-arr[i-1])== input - 1) && i!=input)
+              {
+                  i++;
+              }
+              if(i==input)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else
+                {
+                    cout<<"NO"<<endl;
+                }
+    }
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,x,i,j;
+    cin>>t;
+    while(t--)
+    {
+        int sum=0;
+        cin>>x;
+        int a[x];
+        for(i=0; i<x; i++)
+        {
+            cin>>a[i];
+        }
+        int min_value = 1e9;
+        for(j=x-1; j>=0; j--)
+        {
+            if(a[j]>min_value)
+            {
+                sum++;
+            }
+            else
+            {
+               min_value = a[j];
+            }
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}

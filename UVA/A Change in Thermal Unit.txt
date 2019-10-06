@@ -1,0 +1,15 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+  double t,x,y,out;
+  cin>>t;
+  for(int i=1; i<=t; i++)
+  {
+    cin>>x>>y;
+    out = x + (5.0/9.0) * y;
+    cout<<fixed<<setprecision(2)<<"Case "<<i<<": "<<out<<endl;
+  }
+  return 0;
+}

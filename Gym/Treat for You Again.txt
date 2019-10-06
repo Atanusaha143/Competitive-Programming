@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char a;
+    cin>>a;
+    if(a=='S')
+    {
+        cout<<"Ragging er sathe jorito thakle paap hobe paap, paapider shasti howa uchit"<<endl;
+    }
+    else if(a=='H')
+    {
+       cout<<"RUET-e kono ragging nai, egula media er srishti"<<endl;
+    }
+    return 0;
+}

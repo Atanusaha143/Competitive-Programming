@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>  // G
+#include<iomanip>
+using namespace std;
+int main()
+{
+    double t,a[3],b;
+    int i,j;
+    cin>>t;
+    for(i=1; i<=t; i++)
+    {
+          for( j=0; j<3; j++)
+          {
+              cin>>a[j];
+          }
+          sort(a,a+3);
+          if(a[0]<10 && a[1]<10)
+          {
+              cout<<"Failed"<<endl;
+          }
+          else
+          {
+              b = (a[1]+a[2])/2;
+              cout<<fixed<<setprecision(2)<<b<<endl;
+          }
+          b=0;
+    }
+    return 0;
+}

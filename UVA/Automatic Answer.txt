@@ -1,0 +1,16 @@
+#include<bits/stdc++.h> // H
+using namespace std;
+int main()
+{
+    int a,b;
+    cin>>a;
+
+        for(int i=0; i<a; i++)
+        {
+            cin>>b;
+            b=((((((b*567)/9)+7492)*235)/47)-498);
+            b= (b/10)%10;
+            cout<<abs(b)<<endl;
+        }
+    return 0;
+}

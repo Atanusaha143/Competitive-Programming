@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ 
+{
+    int a;
+    double sum=0;
+    cin>>a;
+    for(int i=1; i<=a; i++)
+    {
+        if(i%2==1)
+        {
+            sum++;
+        }
+        else
+        {
+            sum = sum + 0;
+        }
+    }
+    cout<<fixed<<setprecision(10)<<sum/a;
+ 
+    return 0;
+}

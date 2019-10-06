@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ 
+{
+   long double t,arr,sum=0;
+   long long a,i;
+   cin>>t;
+   while(t--)
+   {
+   sum=0;
+     cin>>a;
+     long long arr[a];
+     for(i=0; i<a; i++)
+     {
+       cin>>arr[i];
+       sum = sum + arr[i];
+     }
+   //if(sum%a==0.0) cout<<sum/a<<endl;
+   {
+     long long c;
+     c = ceil(sum/a);
+     cout<<c<<endl;
+   }
+ 
+   }
+ 
+  return 0;
+}

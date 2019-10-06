@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+    {
+        int a;
+        cin>>a;
+        long long b,c,d;
+        for(int i=1; i<=a; i++)
+        {
+           cin>>b>>c>>d;
+           cout<<(b+c+d)/2<<endl;
+        }
+        return 0;
+    }

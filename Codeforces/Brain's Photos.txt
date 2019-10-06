@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int x,y,i,j;
+   cin>>x>>y;
+   char a[x][y];
+   for(i=0 ; i<x; i++)
+   {
+     for(j=0; j<y; j++)
+     {
+        cin>>a[i][j];
+     }
+   }
+   for(i=0; i<x; i++)
+   {
+    for(j=0; j<y; j++)
+    {
+      if(a[i][j]=='C' || a[i][j]=='M' || a[i][j]=='Y')
+      {
+      cout<<"#Color"<<endl;
+      return 0;
+      }
+    }
+   }
+   cout<<"#Black&White"<<endl;
+   return 0;
+}

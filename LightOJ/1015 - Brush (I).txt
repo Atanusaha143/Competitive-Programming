@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b,c,i,x=0;
+    cin>>a;
+    for(i=1; i<=a; i++)
+    {
+        cin>>b;
+        for(int j=1; j<=b; j++)
+        {
+            cin>>c;
+            if(c>=0)
+            x+=c;
+        }
+        cout<<"Case "<<i<<": "<<x<<endl;
+        x=0;
+    }
+ 
+    return 0;
+}
+ 

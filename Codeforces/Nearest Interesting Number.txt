@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    while(1)
+    {
+        
+        int m=a, sum=0;
+        while(m)
+        {
+            sum+=m%10;
+            m /=10;
+        }
+        if(sum%4==0)
+        {
+            cout<<a<<endl;
+            return 0;
+        }
+        a++;
+    }
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+int main()
+{
+    string a[10] = {"zero", "one", "two", "three", "four",
+                    "five", "six", "seven", "eight", "nine"};
+    string b[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen",
+                    "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    string c[10] = {"", "", "twenty", "thirty", "forty",
+                    "fifty", "sixty", "seventy", "eighty", "ninety"};
+    int x;
+    cin >> x;
+
+    if (x < 10)
+        cout << a[x] << endl;
+    else if (x >= 10 and x < 20)
+        cout << b[x - 10] << endl;
+    else if (x % 10 == 0)
+        cout << c[x / 10] << endl;
+    else
+        cout << c[x / 10] << "-" << a[x % 10] << endl;
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+#define pi 2 * acos(0.0)
+using namespace std;
+int main()
+{
+    double r,s,c,a;
+    int x;
+    cin>>x;
+    for (int i = 1; i <= x; i++)
+    {
+        cin>>r;
+        c = pi * r * r;
+        s = ((r+r) * (r+r));
+        a = s - c;
+        cout<<fixed<<setprecision(2)<<"Case "<<i<<": "<<a<<endl;
+    }
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int z,i,t;
+  cin>>t;
+  int arr[t];
+  for(i=1; i<=t; i++)
+  {
+    cin>>arr[i];
+  }
+  if(t==1 && arr[t]!=15 && arr[t]!=0) cout<<"-1"<<endl;
+  else if(arr[t]==0)
+  {
+    cout<<"UP"<<endl;
+  }
+  else if(arr[t]==15) cout<<"DOWN"<<endl;
+  else
+  {
+    if(arr[t]-arr[t-1]==1 && arr[t]!=15)
+    cout<<"UP"<<endl;
+    if(arr[t]-arr[t-1]==-1)
+    cout<<"DOWN"<<endl;
+  }
+
+  return 0;
+}

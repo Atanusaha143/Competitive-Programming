@@ -1,0 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  cout<<"RUET-e kono ragging nai, egula media er srishti"<<endl;
+  return 0;
+}

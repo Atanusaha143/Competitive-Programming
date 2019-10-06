@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+#define pi acos(-1.0)
+using namespace std;
+int main()
+{
+    int x;
+    double R, n, r, theata;
+    cin>>x;
+    for(int i=1; i<=x; i++)
+    {
+       cin>>R>>n;
+       theata = (pi)/n;
+       r = R * sin(theata);
+       r /= (1+sin(theata));
+ 
+       cout<<fixed<<setprecision(10)<<"Case "<<i<<": "<<r<<endl;
+    }
+    return 0;
+}

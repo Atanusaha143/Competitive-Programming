@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  long long a,b,c,d;
+  cin>>a;
+  for(int i=1; i<=a; i++)
+  {
+      cin>>b>>c>>d;
+      cout<<max(b-d,b-c)+1<<endl;
+  }
+  return 0;
+}

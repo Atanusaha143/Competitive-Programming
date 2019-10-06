@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,a,b,c,time;
+    cin>>x;
+    for(c=1; c<=x; c++)
+    {
+        cin>>a>>b;
+        if(a<=b)
+        {
+             time = (b*4) + 19;
+        }
+        else
+        {
+             time = ((a-b)+a)*4 + 19;
+        }
+        cout<<"Case "<<c<<": "<<time<<endl;
+    }
+    return 0;
+}

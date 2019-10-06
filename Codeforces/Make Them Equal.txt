@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long arr[100];
+int a,i,len,d;
+int main()
+{
+    cin>>a;
+    for(i=0; i<a; i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr,arr+a);
+    len = unique(arr,arr+a) -arr;
+    if(len>3)
+    {
+        cout<<"-1"<<endl;
+    }
+    else if(len == 1)
+    {
+        cout<<"0"<<endl;
+    }
+    else if(len == 2)
+    {
+        d = arr[1]-arr[0];
+        if(d%2==1)
+        {
+            cout<<d<<endl;
+        }
+        else
+        {
+            cout<<d/2<<endl;
+        }
+    }
+    else
+    {
+        if(arr[1]-arr[0] != arr[2]-arr[1])
+        {
+            cout<<"-1"<<endl;
+        }
+        else
+        {
+            cout<<(arr[2]-arr[1])<<endl;
+        }
+    }
+    return 0;
+}

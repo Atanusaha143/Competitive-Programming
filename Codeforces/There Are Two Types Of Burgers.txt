@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    long long test, bun, beef_pat, chick_cut, ham_tk, chick_tk, total_burger, max_profit;
+    cin>>test;
+    
+   for(int i=1; i<=test; i++)
+        {
+          cin>>bun>>beef_pat>>chick_cut>>ham_tk>>chick_tk;
+          max_profit=0;
+          total_burger = bun/2;
+          if(ham_tk>chick_tk)
+            {
+            for(int i=1;  i<=beef_pat; i++)
+            {
+                if(total_burger>0)
+                {
+                    max_profit+=ham_tk;
+                }
+                else
+                {
+                  break;
+                }
+                total_burger--;
+            }
+            for(int i=1; i<=chick_cut; i++)
+            {
+                if(total_burger>0)
+                {
+                    max_profit+=chick_tk;
+                }
+                else
+                {
+                    break;
+                }
+                total_burger--;
+            }
+        }
+        else
+            {
+            for(int i=1; i<=chick_cut; i++)
+            {
+                if(total_burger>0)
+                {
+                    max_profit+=chick_tk;
+                }
+                else
+                {
+                    break;
+                }
+                total_burger--;
+            } 
+            for(int i=1; i<=beef_pat; i++)
+            {
+                if(total_burger>0)
+                {
+                    max_profit+=ham_tk;
+                }
+                else
+                {
+                    break;
+                }
+                total_burger--;
+            }
+        }
+        cout<<max_profit<<endl;
+    }
+    return 0;
+}

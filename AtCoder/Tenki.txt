@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+	string a;
+	cin>>a;
+	string b;
+	cin>>b;
+	int i= 0, j = 0, sum = 0;
+	for(i=0; i<3; i++)
+	{
+		if (a[i]==b[j])
+	{
+		sum++;
+		j++;
+	}
+	else
+	{
+	    j++;
+	}
+	}
+	cout<<sum<<endl;
+	return 0;
+	
+}
