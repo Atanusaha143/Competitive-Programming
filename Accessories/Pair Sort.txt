@@ -1,0 +1,21 @@
+int ar[n],ar1[n];
+    for(int i=0;i<n;i++)
+    {
+    cin>>ar[i]>>ar1[i];
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=0;j<n-i-1;j++)
+        {
+            if(ar[j]>ar[j+1])
+            {
+                x=ar[j];
+                ar[j]=ar[j+1];
+                ar[j+1]=x;
+ 
+                y=ar1[j];
+                ar1[j]=ar1[j+1];
+                ar1[j+1]=y;
+            }
+        }
+    }

@@ -1,0 +1,37 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	long long a,b,j,ans;
+	cin>>b;
+
+	while(b--)
+	{
+		cin>>a;
+	    long long arr[a];
+		for(int i = 0; i<a; i++)
+            {
+                cin>>arr[i];
+            }
+
+       sort(arr,arr+a, greater<int>());
+           ans = 0;
+   	      for(j=0; j<a; j++)
+	      {
+		    if(arr[j]==2048) {ans=2048;}
+
+		    else
+            {
+                if(arr[j]<2048 && ans !=2048)
+                {
+                    ans+=arr[j];
+
+		        }
+	        }
+        }
+        if(ans==2048) cout<<"YES"<<endl;
+	      else cout<<"NO"<<endl;
+   }
+return 0;
+}
