@@ -50,7 +50,7 @@ int main()
         //////////////////////// Pushing into a vector as many as you want ///////////////////////////
         cout<<endl;
         cout<<endl;
-
+        cout<<"### Pushing into a Vector as many as you want ###"<<endl;
         int a,b;
         cout<<"Enter how many numbers to push in the vector: ";
         cin>>a;
@@ -70,8 +70,8 @@ int main()
 
         for(int i=0; i<a-1; i++)  // Accessing vector elements
         {
-            if(myVector[i]==myVector[i+1]) cout<<i<<" and "<<i+1<<" positions vector elements are same"<<endl;
-            else cout<<i<<" and "<<i+1<<" positions vector elements are not same"<<endl;
+            if(myVector[i]==myVector[i+1]) cout<<i<<" and "<<i+1<<" Positions of vector elements are same"<<endl;
+            else cout<<i<<" and "<<i+1<<" Positions of vector elements are not same"<<endl;
         }
 
         sort(myVector.begin(),myVector.end()); // Sorting vector elements in ascending order
@@ -90,10 +90,10 @@ int main()
         }
 
 
-        //////////////////////// Transfering array elements into a vector ///////////////////////////
+        //////////////////////// Transferring array elements into a vector ///////////////////////////
         cout<<endl;
         cout<<endl;
-
+        cout<<"### Transferring array elements into a Vector ###"<<endl;
         int c;
         cout<<"Enter size of the array: ";
         cin>>c;
@@ -111,5 +111,65 @@ int main()
             cout<<myVector1[i]<<" ";
         }
 
+        ///////////////////////////////// Resize ////////////////////////////////////////
+        cout<<endl;
+        cout<<endl;
+        cout<<"### Resize ###"<<endl;
+        vector<int> vec;
+        cout<<"Enter a Vector size: ";
+        int a1,b1;
+        cin>>a1;
+        cout<<"Enter Vector elements: ";
+        for(int i=0; i<a1; i++)
+        {
+            cin>>b1;
+            vec.push_back(b1);
+        }
+        cout<<"Enter a Resize of Vector: ";
+        int x;
+        cin>>x;
+        if(vec.size()>x)
+        {
+            cout<<"Resized Vector is less than Current Vector"<<endl;;
+            vec.resize(x); // Resized with lower size
+            cout<<"New Resized Vector contains: ";
+            for(int i=0; i<vec.size(); i++) cout<<vec[i]<<" ";
+        }
+        else
+        {
+            cout<<"Resized Vector is greater than Current Vector"<<endl;
+            cout<<"New Resized Vector contains: ";
+            vec.resize(x); // Resized with greater size
+            for(int i=0; i<vec.size(); i++) cout<<vec[i]<<" ";
+        }
+        cout<<endl;
 
+        cout<<"Current Vector Size: "<<vec.size()<<endl;
+        cout<<"Enter a new Size of Vector which is greater than Current Vector size: ";
+        int x1,x2;
+        cin>>x1;
+        cout<<"Enter an Element with which you want to Resize your Vector: ";
+        cin>>x2;
+        cout<<"New Resized vector with element "<<x2<<" : ";
+        vec.resize(x1,x2); // Resized with element (Vector size must be greater than previous) --> vector_name(vector_size, resized_element)
+        for(int i=0; i<vec.size(); i++) cout<<vec[i]<<" ";
+
+        /////////////////////////////// Front and Back ////////////////////////////////
+        cout<<endl;
+        cout<<endl;
+        cout<<"### Front and Back ### "<<endl;
+        int a2,b2;
+        vector<int> veci;
+        cout<<"Enter Vector Size: ";
+        cin>>a2;
+        cout<<"Enter Vector elements: ";
+        for(int i=0; i<a2; i++)
+        {
+            cin>>b2;
+            veci.push_back(b2);
+        }
+        cout<<"Front element of this Vector is: "<<veci.front()<<endl;
+        cout<<"Back element of this Vector is: "<<veci.back()<<endl;
+        if(veci.front()>veci.back()) cout<<"Difference between Front and Back: "<<veci.front() - veci.back();
+        else if(veci.back()>veci.front()) cout<<"Difference between Front and Back: "<<veci.back() - veci.front();
 }
