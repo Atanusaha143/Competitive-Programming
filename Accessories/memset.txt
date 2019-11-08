@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  char str[] = "AtanuSaha";
+  memset(str,'a',sizeof(str));
+  cout<<str;
+  return 0;
+}
