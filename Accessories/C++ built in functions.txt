@@ -1,0 +1,65 @@
+**C++ <cmath> Header**
+C++ abs()	returns absolute value of an argument
+C++ acos()	Returns Inverse cosine a Number
+C++ acosh()	returns hyperbolic cosine of a number
+C++ asin()	Returns Inverse Sine a Number
+C++ asinh()	returns arc hyperbolic sine of a number
+C++ atan()	Returns Inverse tangent a Number
+C++ atan2()	Returns Inverse Tangent of a Coordinate
+C++ atanh()	returns arc hyperbolic tangent of a number
+C++ cbrt()	Computes Cube Root of a Number
+C++ ceil()	Return ceiling value of number
+C++ cos()	Returns Cosine of the Argument
+C++ cosh()	Returns Hyperbolic Cosine of an Angle
+C++ exp()	returns exponential (e) raised to a number
+C++ floor()	Returns floor value of decimal number
+C++ log()	Returns Natural Logarithm of a Number
+C++ log10()	Returns Base 10 Logarithm of a Number
+C++ log2()	returns base2 logarithm of a number
+C++ pow()	Computes Power a Number
+C++ remainder()	Returns remainder of x/y
+C++ round()	Returns integral value nearest to argument
+C++ sin()	Returns Sine of the Argument
+C++ sinh()	returns hyperbolic sine of an angle
+C++ sqrt()	Computes Square Root of A Number
+C++ tan()	Returns Tangent of the Argument
+C++ tanh()	returns hyperbolic tangent of an angle
+
+------------------------------------------------------------------------------------------------
+
+**C++ <cstdlib> header*
+C++ abs()	returns absolute value of an integer
+C++ atof()	Converts String to Double
+C++ atol()	Converts String to Integer
+C++ bsearch()	performs binary search on sorted array
+C++ labs()	returns absolute value of long or long int number
+C++ llabs()	returns absolute value of a long long int data
+C++ qsort()	sorts array using quick-sort algorithm
+C++ strtod()	returns string float to double
+C++ strtol()	Converts a string to number
+C++ strtoll()	converts string to long long int in C++
+C++ strtoull()	converts string to unsigned long long int
+
+------------------------------------------------------------------------------------------------
+**C++ <cstring> header**
+C++ memset()	copies character to beginning of string n times
+C++ strcat()	appends copy of string to end of another string
+C++ strchr()	searches for character in string
+C++ strcmp()	compare two strings
+C++ strcpy()	copies character string from source to destination
+C++ strlen()	returns length of given string
+
+------------------------------------------------------------------------------------------------
+**C++ <cstdio> header**
+C++ fgetc()	reads the next character from given input stream
+C++ fgets()	reads n number of characters from file stream
+C++ fputc()	writes character to given output stream
+C++ fputs()	writes string to file stream
+C++ getc()	reads next character from input stream
+C++ getchar()	reads next character from stdin
+C++ gets()	reads line from stdin
+C++ putc()	writes character to given output stream
+C++ putchar()	writes a character to stdout
+C++ puts()	writes string to stdout
+C++ remove()	deletes the specified file
+C++ rename()	renames or moves specified file
