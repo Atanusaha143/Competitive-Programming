@@ -1,3 +1,5 @@
+// https://codeforces.com/contest/1006/problem/A
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,5 +24,14 @@ typedef long double LD;
 
 int main()
 {
-
+    LL t,maxi=0,count=0;
+    sfl(t);
+    LL arr[t],brr[t];
+    for(int i=0; i<t; i++)
+    {
+        sfl(arr[i]);
+        if(arr[i]%2==0) brr[i] = arr[i]-1;
+        else brr[i] = arr[i];
+    }
+    for(int i=0; i<t; i++) cout<<brr[i]<<" ";
 }

@@ -1,3 +1,5 @@
+// https://codeforces.com/contest/1015/problem/A
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,8 +21,24 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-
+LL arr[101];
 int main()
 {
-
+    int n,m,count=0;
+    sfi(n); sfi(m);
+    while(n--)
+    {
+        int l,r;
+        sfi(l); sfi(r);
+        for(int i=l; i<=r; i++) arr[i]=1;
+    }
+    for(int i=1; i<=m; i++)
+    {
+        if(arr[i]==0) count++;
+    }
+    cout<<count<<endl;
+    for(int i=1; i<=m; i++)
+    {
+        if(arr[i]==0) cout<<i<<" ";
+    }
 }

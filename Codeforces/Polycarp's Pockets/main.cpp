@@ -1,3 +1,5 @@
+// https://codeforces.com/problemset/problem/1003/A
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,5 +24,15 @@ typedef long double LD;
 
 int main()
 {
-
+    int t,maxi=0;
+    map<int,int>mp;
+    sfi(t);
+    int arr[t];
+    for(int i=0; i<t; i++)
+    {
+        sfi(arr[i]);
+        mp[arr[i]]++;
+    }
+    for(int i=0; i<t; i++) if(mp[arr[i]]>maxi) maxi = mp[arr[i]] ;
+    cout<<maxi<<endl;
 }

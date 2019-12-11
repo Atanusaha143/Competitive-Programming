@@ -1,3 +1,5 @@
+// https://codeforces.com/problemset/problem/1005/A
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,5 +24,16 @@ typedef long double LD;
 
 int main()
 {
-
+    int t,count=0;
+    sfi(t);
+    int arr[t];
+    for(int i=0; i<t; i++) sfi(arr[i]);
+    for(int i=0; i<t; i++)
+    {
+        int x = arr[i]+1;
+        if(arr[i+1]==x) arr[i]=0;
+        else count++;
+    }
+    cout<<count<<NL;
+    for(int i=0; i<t; i++) if(arr[i]>0) cout<<arr[i]<<" ";
 }
