@@ -18,7 +18,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define mem(ara,val) memset(ara,val,sizeof(ara))
+#define mem(arr,val) memset(arr,val,sizeof(arr))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
 #define IOS ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
@@ -41,5 +41,21 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    int x;
+    cin>>x;
+    while(x--)
+    {
+        int n,k1,k2;
+        cin>>n>>k1>>k2;
+        int a[k1];
+        for(int i=0; i<k1; i++)
+        cin>>a[i];
+        int b[k2];
+        for(int i=0; i<k2; i++)
+        cin>>b[i];
+        sort(a,a+k1,greater<int>());
+        sort(b,b+k2,greater<int>());
+        if(a[0]>b[0]) cout<<"Yes"<<NL;
+        else cout<<"No"<<NL;
+    }
 }

@@ -41,5 +41,21 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    LL t;
+    sfl(t);
+    while(t--)
+    {
+        LL  n;
+        sfl(n);
+        LL arr[n];
+        for(int i=0; i<n; i++) sfl(arr[i]);
+        ostringstream ss;
+        for(int i:arr)
+        {
+            ss << i;
+        }
+        S str(ss.str());
+        if(next_permutation(str.begin(),str.end())) cout<<str<<NL;
+        else cout<<"-1"<<NL;
+    }
 }

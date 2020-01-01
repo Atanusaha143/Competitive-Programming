@@ -41,5 +41,45 @@ LL lcm(LL a,LL b)
 
 int main()
 {
+    int t;
+    sfi(t);
+    while(t--)
+    {
+        LL count=1;
+        S s;
+        cin>>s;
+        S ss = "";
+        LL sz = s.size();
+        LL arr[sz],k=0;;
+        for(int i=0; i<sz; i++)
+        {
+            if(s[i]!=s[i+1])
+            {
+                ss = ss + s[i];
+                arr[k] = count;
+                k++;
+                count = 1;
+            }
+            else count++;
+        }
+        LL ssz = ss.size();
+        for(int i=0; i<k; i++)
+        {
+            LL digit_size=0;
+            LL check = arr[i];
+            while(check!=0)
+            {
+                check/=10;
+                digit_size++;
+            }
+            arr[i] = digit_size;
+        }
 
+        LL total_digit_size=0;
+        for(int i=0; i<k; i++) total_digit_size+=arr[i];
+        LL new_string_size = ssz + total_digit_size;
+
+        if(new_string_size<sz) cout<<"YES"<<NL;
+        else cout<<"NO"<<NL;
+    }
 }

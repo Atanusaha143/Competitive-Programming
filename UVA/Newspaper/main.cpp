@@ -8,12 +8,9 @@ using namespace std;
 #define S string
 #define PI (2.0*acos(0.0))
 #define sfi(x) scanf("%d",&x)
-#define sfi2(x,y) scanf("%d %d",&x,&y)
-#define sfi3(x,y,z) scanf("%d %d %d",&x,&y,&z)
-#define sfl(x) scanf("%lld",&x)
-#define sfl2(x,y) scanf("%lld %lld",&x,&y)
-#define sfl3(x,y,z) scanf("%lld %lld %lld",&x,&y,&z)
-#define sfd(x) scanf("%lf",&x);
+#define sfl(x) scanf("%I64d",&x)
+#define sfd(x) scanf("%lf",&x)
+#define sfs(x) scanf("%s",x)
 #define max3(a,b,c) max(a,max(b,c))
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
@@ -41,5 +38,33 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    IOS;
+   int t;
+   S s;
+     cin>>t;
+     while(t--)
+     {
+        int n;
+        D sum=0;
+        cin>>n;
+        char arr[n];
+        D brr[n];
+        for(int i=0; i<n; i++) cin>>arr[i]>>brr[i];
+        int x;
+        cin>>x;
+        cin.ignore();
+        for(int k=0; k<x; k++)
+        {
+        getline(cin,s);
+        for(int i=0; i<s.size(); i++)
+        {
+            for(int j=0; j<n; j++)
+            {
+                if(s[i]==arr[j]) sum+=brr[j];
+            }
+        }
+        }
+        cout<<fixed<<setprecision(2)<<sum/100.00<<"$"<<NL;
+     }
+     return 0;
 }

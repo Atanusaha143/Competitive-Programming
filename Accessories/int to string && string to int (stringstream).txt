@@ -1,0 +1,10 @@
+           integer --> string                                                                 string --> integer
+
+	int n;										string s;
+	cin>>n;										cin>>s;
+	stringstream sso;								stringstream sso;
+	sso << n;									sso << s;
+	string s;									int n;
+	sso >> s;									sso >> n;
+	cout<<n;									cout<<s;
+	cout<<s;									cout<<n;	

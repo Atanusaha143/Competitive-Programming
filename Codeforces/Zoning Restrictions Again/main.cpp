@@ -8,12 +8,9 @@ using namespace std;
 #define S string
 #define PI (2.0*acos(0.0))
 #define sfi(x) scanf("%d",&x)
-#define sfi2(x,y) scanf("%d %d",&x,&y)
-#define sfi3(x,y,z) scanf("%d %d %d",&x,&y,&z)
-#define sfl(x) scanf("%lld",&x)
-#define sfl2(x,y) scanf("%lld %lld",&x,&y)
-#define sfl3(x,y,z) scanf("%lld %lld %lld",&x,&y,&z)
-#define sfd(x) scanf("%lf",&x);
+#define sfl(x) scanf("%I64d",&x)
+#define sfd(x) scanf("%lf",&x)
+#define sfs(x) scanf("%s",x)
 #define max3(a,b,c) max(a,max(b,c))
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
@@ -41,5 +38,19 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    int n,h,m,profit=0;
+    sfi(n); sfi(h); sfi(m);
+    int arr[n+1];
+    for(int i=1; i<=n; i++) arr[i]=h;
+    for(int j=1; j<=m; j++)
+    {
+        int l,r,x;
+        sfi(l); sfi(r); sfi(x);
+        for(int k=l; k<=r; k++)
+        {
+            arr[k]=min(arr[k],x);
+        }
+    }
+    for(int i=1; i<=n; i++) profit+=arr[i]*arr[i];
+    cout<<profit<<NL;
 }

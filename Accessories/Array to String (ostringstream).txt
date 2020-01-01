@@ -1,0 +1,7 @@
+        for(int i=0; i<n; i++) sfl(arr[i]);
+        ostringstream ss;
+        for(int i:arr)
+        {
+            ss << i;
+        }
+        S str(ss.str());

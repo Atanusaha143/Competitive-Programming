@@ -41,5 +41,15 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    int n,count=0;
+    sfi(n);
+    S s;
+    cin>>s;
+        for(int i=0; i<s.size(); i++)
+        {
+            if(s[i]=='+') count++;
+            else count--;
+            if(count<0) count=0;
+        }
+    cout<<count<<NL;
 }

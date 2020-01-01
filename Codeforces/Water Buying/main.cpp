@@ -41,5 +41,22 @@ LL lcm(LL a,LL b)
 
 int main()
 {
+    LL t;
+    sfl(t);
+    while(t--)
+    {
+        LL n,a,b,cost=0;
+        sfl3(n,a,b);
 
+        LL half_b = b/2; // now 'a' = 'half_b' = 1 Liter
+        LL mini = min(a,half_b);
+
+        if(mini==a) cout<<n*a<<NL; // When minimum cost is 'a'
+        else                       // When minimum cost is 'half_b'
+        {
+            cost = (n/2)*b; // As we can't take half of 'b' then we have to use full of 'b'
+            if(n%2!=0) cost+=a; // When 'n' is odd then For the remaining 1 Liter we need 'a'
+            cout<<cost<<NL;
+        }
+    }
 }

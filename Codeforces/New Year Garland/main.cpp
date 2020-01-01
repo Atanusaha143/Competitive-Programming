@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<algorithm>
+#include<sstream>
 using namespace std;
 
 #define NL '\n'
@@ -8,12 +10,9 @@ using namespace std;
 #define S string
 #define PI (2.0*acos(0.0))
 #define sfi(x) scanf("%d",&x)
-#define sfi2(x,y) scanf("%d %d",&x,&y)
-#define sfi3(x,y,z) scanf("%d %d %d",&x,&y,&z)
-#define sfl(x) scanf("%lld",&x)
-#define sfl2(x,y) scanf("%lld %lld",&x,&y)
-#define sfl3(x,y,z) scanf("%lld %lld %lld",&x,&y,&z)
-#define sfd(x) scanf("%lf",&x);
+#define sfl(x) scanf("%I64d",&x)
+#define sfd(x) scanf("%lf",&x)
+#define sfs(x) scanf("%s",x)
 #define max3(a,b,c) max(a,max(b,c))
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
@@ -38,8 +37,20 @@ LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
 }*/
-
 int main()
 {
 
+   int t;
+   cin>>t;
+   while(t--)
+   {
+   	LL a[3];
+        cin>>a[0]>>a[1]>>a[2];
+        sort(a,a+3,greater<LL>());
+
+        if(a[0]<=(a[1]+a[2])+1)
+            cout<<"Yes"<<NL;
+        else
+            cout<<"No"<<NL;
+   }
 }

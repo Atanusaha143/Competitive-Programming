@@ -1,4 +1,8 @@
-#include<bits/stdc++.h>
+// Cxxdroid Mobile Compiler
+
+#include<iostream>
+#include<algorithm>
+#include<string>
 using namespace std;
 
 #define NL '\n'
@@ -18,7 +22,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define mem(ara,val) memset(ara,val,sizeof(ara))
+#define mem(arr,val) memset(arr,val,sizeof(arr))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
 #define IOS ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
@@ -27,19 +31,25 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
-{
-    if(b==0)
-        return a;
-    else
-        return gcd(b,a%b);
-}
-LL lcm(LL a,LL b)
-{
-    return a/gcd(a,b)*b;
-}*/
-
 int main()
 {
-
+	LL n,m;
+	sfl2(n,m);
+	LL arr[n];
+	LL brr[m];
+	LL even = 0, odd =0;
+	LL even1 = 0, odd1=0;
+		for(int i=0; i<n; i++)
+	{
+		 sfl(arr[i]);
+		 if(arr[i]%2==0) even++;
+		 else odd++;
+	}
+	for(int i=0; i<m; i++)
+	{
+		sfl(brr[i]);
+		if(brr[i]%2==0) even1++;
+		 else odd1++;
+	}
+	cout<<min(even,odd1)+min(even1,odd)<<NL;
 }

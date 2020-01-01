@@ -41,5 +41,30 @@ LL lcm(LL a,LL b)
 
 int main()
 {
+    while(1)
+    {
+        LL t,n;
+        LL sum=0,cost=0;
+        cin>>t;
+        if(t==0) break;
 
+        priority_queue<LL,vector<LL>,greater<LL>> pq;
+
+        for(LL i=0; i<t; i++)
+        {
+            cin>>n;
+            pq.push(n);
+        }
+
+        while(pq.size()>1)
+        {
+            sum = pq.top();
+            pq.pop();
+            sum+=pq.top();
+            cost+=sum;
+            pq.pop();
+            pq.push(sum);
+        }
+        cout<<cost<<NL;
+    }
 }

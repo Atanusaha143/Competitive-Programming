@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<algorithm>
+#include<string>
 using namespace std;
 
 #define NL '\n'
@@ -18,7 +20,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define mem(ara,val) memset(ara,val,sizeof(ara))
+#define mem(arr,val) memset(arr,val,sizeof(arr))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
 #define IOS ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
@@ -27,19 +29,9 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
-{
-    if(b==0)
-        return a;
-    else
-        return gcd(b,a%b);
-}
-LL lcm(LL a,LL b)
-{
-    return a/gcd(a,b)*b;
-}*/
-
 int main()
 {
-
+	S a,b;
+	cin>>a>>b;
+	cout<<b+a<<endl;
 }

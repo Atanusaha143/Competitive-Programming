@@ -8,12 +8,9 @@ using namespace std;
 #define S string
 #define PI (2.0*acos(0.0))
 #define sfi(x) scanf("%d",&x)
-#define sfi2(x,y) scanf("%d %d",&x,&y)
-#define sfi3(x,y,z) scanf("%d %d %d",&x,&y,&z)
-#define sfl(x) scanf("%lld",&x)
-#define sfl2(x,y) scanf("%lld %lld",&x,&y)
-#define sfl3(x,y,z) scanf("%lld %lld %lld",&x,&y,&z)
-#define sfd(x) scanf("%lf",&x);
+#define sfl(x) scanf("%I64d",&x)
+#define sfd(x) scanf("%lf",&x)
+#define sfs(x) scanf("%s",x)
 #define max3(a,b,c) max(a,max(b,c))
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
@@ -41,5 +38,26 @@ LL lcm(LL a,LL b)
 
 int main()
 {
+    int n,a_sent=0,a_lost=0,b_sent=0,b_lost=0;
+    sfi(n);
+    while(n--)
+    {
+        int t,x,y;
+        sfi(t); sfi(x); sfi(y);
+        if(t==1)
+        {
+            a_sent+=x;
+            a_lost+=y;
+        }
+        else
+        {
+            b_sent+=x;
+            b_lost+=y;
+        }
+    }
+    if(a_sent>=a_lost) cout<<"LIVE"<<NL;
+    else cout<<"DEAD"<<NL;
 
+    if(b_sent>=b_lost) cout<<"LIVE"<<NL;
+    else cout<<"DEAD"<<NL;
 }

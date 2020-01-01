@@ -39,7 +39,33 @@ LL lcm(LL a,LL b)
     return a/gcd(a,b)*b;
 }*/
 
+
 int main()
 {
-
+    int n;
+	sfi(n);
+	cin.ignore();
+	while (n--)
+    {
+		stack<char>stk;
+		S s;
+		getline(cin,s);
+		int sz = s.size();
+        for(int i=0; i<sz; i++)
+        {
+           if(s[i]=='(' || s[i]=='[') stk.push(s[i]);
+           else if (s[i]==')')
+           {
+               if(stk.empty() || stk.top()!='(') {stk.push('.'); break;};
+               stk.pop();
+           }
+           else if (s[i]==']')
+           {
+               if(stk.empty() || stk.top()!='[') {stk.push('.'); break;};
+               stk.pop();
+           }
+        }
+        if(stk.empty()) cout<<"Yes"<<NL;
+        else cout<<"No"<<NL;
+    }
 }

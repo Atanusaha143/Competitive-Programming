@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#include<algorithm>
 using namespace std;
 
 #define NL '\n'
@@ -8,12 +10,9 @@ using namespace std;
 #define S string
 #define PI (2.0*acos(0.0))
 #define sfi(x) scanf("%d",&x)
-#define sfi2(x,y) scanf("%d %d",&x,&y)
-#define sfi3(x,y,z) scanf("%d %d %d",&x,&y,&z)
-#define sfl(x) scanf("%lld",&x)
-#define sfl2(x,y) scanf("%lld %lld",&x,&y)
-#define sfl3(x,y,z) scanf("%lld %lld %lld",&x,&y,&z)
-#define sfd(x) scanf("%lf",&x);
+#define sfl(x) scanf("%I64d",&x)
+#define sfd(x) scanf("%lf",&x)
+#define sfs(x) scanf("%s",x)
 #define max3(a,b,c) max(a,max(b,c))
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
@@ -41,5 +40,31 @@ LL lcm(LL a,LL b)
 
 int main()
 {
-
+    LL n;
+    sfl(n);
+    int one=0,zero=0,sum=0,dum=0,oone=0,zzero=0;
+    S s;
+    cin>>s;
+    LL x = s.size();
+    if(x==1) { cout<<"1"<<NL; cout<<s<<NL;}
+    else
+    {
+       for(int i=0; i<x; i++)
+       {
+       	if(s[i]=='0') zero++;
+       	else one++;
+       }
+       if(zero==one)
+       {
+       	cout<<"2"<<NL;
+       	cout<<s[0];
+       	cout<<" ";
+       	for(int i=1; i<x; i++) cout<<s[i];
+       }
+       else
+       {
+       	cout<<"1"<<NL;
+       	cout<<s;
+       }
+    }
 }
