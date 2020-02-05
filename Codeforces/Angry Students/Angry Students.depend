@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1578586910 source:f:\compatative programming\online judge\codeforces\angry students\main.cpp
+	<iostream>
+	<algorithm>
+	<set>
+	<string>
+
