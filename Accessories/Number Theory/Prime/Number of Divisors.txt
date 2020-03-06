@@ -1,0 +1,31 @@
+int NOD(int n)
+{
+    bool prime[n+1];
+    mem(prime,true);
+    int sqr = sqrt(n);
+    for(int i=2; i<sqr; i++)
+    {
+        for(int j=2; i*j<=n; j++)
+        {
+            if(prime[i*j])
+                prime[i*j] = false;
+        }
+    }
+
+    int totalNOD = 1;
+    for(int i=2; i<=n; i++)
+    {
+        if(prime[i])
+        {
+            int count = 0;
+            while(n%i==0)
+            {
+                n /= i;
+                count++;
+            }
+            totalNOD *= (count+1);
+        }
+    }
+
+    return totalNOD;
+}
