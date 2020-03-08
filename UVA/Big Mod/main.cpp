@@ -29,7 +29,7 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
+LL gcd(LL a,LL b)
 {
     if(b==0)
         return a;
@@ -39,25 +39,30 @@ typedef long double LD;
 LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
-}*/
+}
 
-LL bigmod(LL base, LL power, LL mod)
+int bigmod(int base, int power, int mod)
 {
     if(power==0) return 1;
     else if(power%2==1)
     {
-        LL value1 = base % mod;
-        LL value2 = (bigmod(base,power-1,mod))%mod;
+        int value1 = base % mod;
+        int value2 = (bigmod(base,power-1,mod))%mod;
         return (value1*value2)%mod;
     }
     else
     {
-        LL value1 = (bigmod(base,power/2,mod))%mod;
+        int value1 = (bigmod(base,power/2,mod))%mod;
         return (value1*value1)%mod;
     }
 }
 
+
 int main()
 {
-
+    int base,power,mod;
+    while(sfi3(base,power,mod)!=EOF)
+    {
+        cout<<bigmod(base,power,mod)<<NL;
+    }
 }
