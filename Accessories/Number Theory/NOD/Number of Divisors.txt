@@ -1,4 +1,4 @@
-int NOD(int n)
+int NOD(int n) // with prime factorization
 {
     bool prime[n+1];
     mem(prime,true);
