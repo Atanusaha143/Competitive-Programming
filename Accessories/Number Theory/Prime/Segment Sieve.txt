@@ -1,0 +1,17 @@
+int segseive(LL left,LL right)
+{
+    int i,ans=0;
+    for(i=0;i<(right-left+1);i++) segprime[i]=0;
+    if(left<2) left=2;
+	for(i=0;(LL)(prime[i]*prime[i])<=right && i<sz(prime); i++)
+		{
+            LL base=(prime[i]*(left/prime[i]));
+            if(base<left) base+=prime[i];
+            if(base<(LL)(prime[i]+prime[i])) base=prime[i]+prime[i];
+            for(;base<=right;base+=prime[i]) segprime[base-left]=1;
+        }
+     for(i=0;i<(right-left+1);i++)
+     	 if(segprime[i]==0)
+     	 	ans++;
+     return ans;
+}

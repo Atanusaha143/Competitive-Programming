@@ -20,9 +20,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define asort(x) sort(x.begin(), x.end())
-#define dsort(x) sort(x.begin(), x.end(), greater<int>())
-#define unq(x) x.erase(unique(x.begin(),x.end()),x.end())
+#define unq(vec) vec.erase(unique(vec.begin(),vec.end()),vec.end())
 #define mem(ara,val) memset(ara,val,sizeof(ara))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
@@ -60,7 +58,11 @@ LL bigmod(LL base, LL power, LL mod)
     }
 }
 
+
 int main()
 {
-
+    int a,b,c;
+    sfi3(a,b,c);
+    int ans = (((a+1)*(b+1))/(c+1))-1;
+    cout<<ans;
 }

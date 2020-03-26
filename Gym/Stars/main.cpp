@@ -20,9 +20,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define asort(x) sort(x.begin(), x.end())
-#define dsort(x) sort(x.begin(), x.end(), greater<int>())
-#define unq(x) x.erase(unique(x.begin(),x.end()),x.end())
+#define unq(vec) vec.erase(unique(vec.begin(),vec.end()),vec.end())
 #define mem(ara,val) memset(ara,val,sizeof(ara))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
@@ -32,7 +30,7 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
+LL gcd(LL a,LL b)
 {
     if(b==0)
         return a;
@@ -42,7 +40,7 @@ typedef long double LD;
 LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
-}*/
+}
 
 LL bigmod(LL base, LL power, LL mod)
 {
@@ -62,5 +60,15 @@ LL bigmod(LL base, LL power, LL mod)
 
 int main()
 {
-
+    LL t;
+    sfl(t);
+    while(t--)
+    {
+        LL x1,y1,x2,y2;
+        cin>>x1>>y1>>x2>>y2;
+        LL x = abs(x1-x2);
+        LL y = abs(y1-y2);
+        LL ans = gcd(x,y);
+        cout<<ans+1<<NL;
+    }
 }

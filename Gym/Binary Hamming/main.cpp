@@ -20,9 +20,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define asort(x) sort(x.begin(), x.end())
-#define dsort(x) sort(x.begin(), x.end(), greater<int>())
-#define unq(x) x.erase(unique(x.begin(),x.end()),x.end())
+#define unq(vec) vec.erase(unique(vec.begin(),vec.end()),vec.end())
 #define mem(ara,val) memset(ara,val,sizeof(ara))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
@@ -32,7 +30,7 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
+LL gcd(LL a,LL b)
 {
     if(b==0)
         return a;
@@ -42,7 +40,7 @@ typedef long double LD;
 LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
-}*/
+}
 
 LL bigmod(LL base, LL power, LL mod)
 {
@@ -62,5 +60,30 @@ LL bigmod(LL base, LL power, LL mod)
 
 int main()
 {
+    freopen("hamming.in","r",stdin);
 
+    int t;
+    sfi(t);
+
+    while(t--)
+    {
+        int n;
+        sfi(n);
+
+        S a,b;
+        cin>>a>>b;
+
+        sort(a.begin(),a.end());
+        sort(b.begin(),b.end());
+        reverse(b.begin(),b.end());
+
+        int count=0;
+        for(int i=0; i<n; i++)
+        {
+            if(a[i]!=b[i])
+                count++;
+        }
+
+        cout<<count<<NL;
+    }
 }

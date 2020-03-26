@@ -20,9 +20,8 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
-#define asort(x) sort(x.begin(), x.end())
-#define dsort(x) sort(x.begin(), x.end(), greater<int>())
-#define unq(x) x.erase(unique(x.begin(),x.end()),x.end())
+#define all(x) x.begin(),x.end()
+#define unq(vec) vec.erase(unique(vec.begin(),vec.end()),vec.end())
 #define mem(ara,val) memset(ara,val,sizeof(ara))
 #define READ freopen("input.txt","r",stdin)
 #define WRITE freopen("output.txt","w",stdout)
@@ -32,7 +31,7 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
+LL gcd(LL a,LL b)
 {
     if(b==0)
         return a;
@@ -42,7 +41,7 @@ typedef long double LD;
 LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
-}*/
+}
 
 LL bigmod(LL base, LL power, LL mod)
 {
@@ -63,4 +62,17 @@ LL bigmod(LL base, LL power, LL mod)
 int main()
 {
 
+
+    int t;
+    sfi(t);
+
+    while(t--)
+    {
+        int n,k;
+        sfi2(n,k);
+
+        if(n%2!=0 && k%2!=0 && k<=sqrt(n)) cout<<"YES"<<NL;
+        else if(n%2==0 && k%2==0 && k<=sqrt(n)) cout<<"YES"<<NL;
+        else cout<<"NO"<<NL;
+    }
 }

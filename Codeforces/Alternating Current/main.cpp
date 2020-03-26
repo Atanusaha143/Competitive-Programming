@@ -20,6 +20,7 @@ using namespace std;
 #define max4(a,b,c,d) max(max3(a,b,c),d)
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
+#define pb push_back
 #define asort(x) sort(x.begin(), x.end())
 #define dsort(x) sort(x.begin(), x.end(), greater<int>())
 #define unq(x) x.erase(unique(x.begin(),x.end()),x.end())
@@ -32,25 +33,22 @@ typedef long long LL;
 typedef unsigned long long ULL;
 typedef long double LD;
 
-/*LL gcd(LL a,LL b)
+LL gcd(LL a,LL b)
 {
-    if(b==0)
-        return a;
-    else
-        return gcd(b,a%b);
+    if(b==0) return a;
+    else return gcd(b,a%b);
 }
 LL lcm(LL a,LL b)
 {
     return a/gcd(a,b)*b;
-}*/
+}
 
 LL bigmod(LL base, LL power, LL mod)
 {
     if(power==0) return 1;
     else if(power%2==1)
     {
-        LL value1 = base % mod;
-        LL value2 = (bigmod(base,power-1,mod))%mod;
+        LL value1 = base % mod; LL value2 = (bigmod(base,power-1,mod))%mod;
         return (value1*value2)%mod;
     }
     else
@@ -60,7 +58,24 @@ LL bigmod(LL base, LL power, LL mod)
     }
 }
 
+
 int main()
 {
 
+    S s;
+    cin>>s;
+    int SIZE = sz(s);
+
+    vector <C> vec;
+
+    for(int i=0; i<SIZE; i++)
+    {
+        if(!vec.empty() && s[i]==vec.back())
+            vec.pop_back();
+
+        else vec.pb(s[i]);
+    }
+
+    if(vec.empty()) cout<<"Yes";
+    else cout<<"No";
 }
