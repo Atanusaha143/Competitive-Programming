@@ -25,8 +25,8 @@ using namespace std;
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d) min(a,min3(b,c,d))
 
-#define F first
-#define S second
+#define Fi first
+#define Se second
 #define PB push_back
 #define MP make_pair
 #define For(i, j, k) for(int i = j; i <= k; i++)
