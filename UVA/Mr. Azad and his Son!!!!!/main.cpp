@@ -72,6 +72,10 @@ LL bigmod(LL base, LL power, LL mod)
     }
 }
 
+
+//  (2^(p-1))*((2^p)−1)) is a perfect number whenever ((2^p)−1) is prime, where p is an integer.
+//   The theorem was proved by Euclid.
+
 bool checkPrime(int n)
 {
     int limit = sqrt(n);
@@ -85,14 +89,16 @@ bool checkPrime(int n)
 
 int main()
 {
-    S arr[40];
-    arr[2]="6", arr[3]="28", arr[5]="496", arr[7]="8128", arr[13]="33550336",
-    arr[17]="8589869056", arr[19]="137438691328", arr[31]="2305843008139952128";
     int n;
     while(sfi(n)and n)
     {
-        if(n==2 or n==3 or n==5 or n==7 or n==13 or n==17 or n==19 or n==31)
-            cout<<"Perfect: "<<arr[n]<<"!"<<NL;
+        int x = pow(2,n)-1;
+        bool checkPerfect = checkPrime(x);
+        if(checkPerfect)
+        {
+            ULL ans = pow(2,(n-1))*(pow(2,n)-1);
+            cout<<"Perfect: "<<ans<<"!"<<NL;
+        }
         else
         {
             bool check = checkPrime(n);
