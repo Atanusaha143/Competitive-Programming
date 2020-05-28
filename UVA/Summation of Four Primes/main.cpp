@@ -73,9 +73,6 @@ LL bigmod(LL base, LL power, LL mod)
 }
 
 
-//  (2^(p-1))*((2^p)−1)) is a perfect number whenever ((2^p)−1) is prime, where p is an integer.
-//   The theorem was proved by Euclid.
-
 bool checkPrime(int n)
 {
     int limit = sqrt(n);
