@@ -1,3 +1,6 @@
+/// Time - 0.13s
+/// Memory - 51M
+
 #include<bits/stdc++.h>
 using namespace std;
 

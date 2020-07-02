@@ -1,5 +1,5 @@
-/// Time - 0.13s
-/// Memory - 51M
+/// Time - 1.92s
+/// Memory - 49M
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -49,51 +49,46 @@ typedef pair <LL,LL> PLL;
 LL gcd(LL a,LL b) { return b==0 ? a : gcd(b,a%b); }
 LL lcm(LL a,LL b) { return (a/gcd(a,b))*b; }
 
-const int n = 1e6;
-bool arrPrime[n+1];
-vector <int> vecPrime;
-void isPrime()
+const int mxN = 1e6;
+int arrPrimeFact[mxN+1];
+
+void primeFactors(int n)
 {
-    int limit = sqrt(n);
-    mem(arrPrime, true);
-    arrPrime[0] = arrPrime[1] = false;
-    vecPrime.PB(2);
-    for(int i=4; i<=n; i+=2) arrPrime[i] = false;
-    for(int i=3; i<=n; i+=2)
+    int keep = n;
+    set <int> st;
+    while(n%2==0)
     {
-        if(arrPrime[i])
-        {
-            vecPrime.PB(i);
-            if(i<=limit)
-            {
-                for(LL j= i*i; j<=n; j+=(2*i))
-                    arrPrime[j] = false;
-            }
-        }
+        st.insert(2);
+        n /= 2;
     }
+
+    int limit = sqrt(n);
+    for(int i=3; i<=limit; i+=2)
+    while(n%i==0)
+    {
+        st.insert(i);
+        n /= i;
+    }
+
+    if(n>1) st.insert(n);
+
+    arrPrimeFact[keep] = sz(st);
 }
 
-int arrFactor[n+1];
-void isFactor()
-{
-    for(int i=0; i<sz(vecPrime); i++)
-        for(int j=vecPrime[i]; j<=n; j+=vecPrime[i])
-            arrFactor[j]++;
-}
-
-int csum[11][n+1];
+int cumsum[11][mxN+1];
 void calc()
 {
     For(i,0,10)
-        For(j,1,n)
-            if(arrFactor[j]==i) csum[i][j] = csum[i][j-1] + 1;
-                else csum[i][j] = csum[i][j-1];
+    For(j,1,mxN)
+    {
+        if(arrPrimeFact[j]==i) cumsum[i][j] = cumsum[i][j-1] + 1;
+        else cumsum[i][j] = cumsum[i][j-1];
+    }
 }
 
 int main()
 {
-    isPrime();
-    isFactor();
+    For(i,2,mxN) primeFactors(i);
     calc();
 
     int t;
@@ -104,7 +99,7 @@ int main()
         int a,b,n;
         sfi3(a,b,n);
 
-        printf("%d\n", csum[n][b] - csum[n][a-1]);
+        printf("%d\n",cumsum[n][b] - cumsum[n][a-1]);
     }
 }
 
