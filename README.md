@@ -1,4 +1,4 @@
-# Online-Judge
+# Competitive Programming
 There are four basic steps in solving a problem:
 
 1. Defining the problem.
