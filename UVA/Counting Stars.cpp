@@ -64,12 +64,12 @@ bool check(int currX, int currY)
     return (currX>=0 and currX < row and currY >= 0 and currY < col and visited[currX][currY] == false and mat[currX][currY] == '*');
 }
 
-int bfs(int startX, int endX)
+int bfs(int startX, int startY)
 {
-    visited[startX][endX] = true;
+    visited[startX][startY] = true;
 
     queue <PII> q;
-    q.push({startX,endX});
+    q.push({startX,startY});
 
     bool flag = false;
 
@@ -137,4 +137,3 @@ int main()
 
 
 */
-
