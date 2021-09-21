@@ -59,69 +59,43 @@ int Y8[8]={1,-1,0,0,-1,-1,1,1};
 int KX[8] = {1,1,2,2,-1,-1,-2,-2};
 int KY[8] = {2,-2,1,-1,2,-2,1,-1};
 
-struct Node
-{
-    int node_num, node_cost;
-    Node(int _node_num, int _node_cost)
-    {
-        node_num = _node_num;
-        node_cost = _node_cost;
-    }
-};
-
 struct Edge
 {
-    int to, cost;
+    LL u,v,w;
 };
 
-bool operator<(Node A, Node B)
-{
-    return A.node_cost > B.node_cost;
-}
+const LL N = 1005;
+vector <Edge> adj;
+LL dist[N], n, m;
 
-const LL N = 1010;
-vector <Edge> adj[N];
-LL dist[N];
-LL n,m;
-
-void dijkstra(int s)
+void bf(LL s)
 {
     for(int i=0; i<N; i++) dist[i] = 1e17;
     dist[s] = 0;
 
-    priority_queue<Node> pq;
-    pq.push(Node(s,0));
-
-    while(!pq.empty())
+    for(int i=0; i<n; i++)
     {
-        Node u = pq.top();
-        pq.pop();
-
-        int unode = u.node_num;
-        int ucost = u.node_cost;
-
-        if(ucost == dist[unode])
+        bool change = false;
+        for(int j=0; j<2*m; j++)
         {
-            for(int i=0; i<sz(adj[unode]); i++)
+            LL unode = adj[j].u;
+            LL vnode = adj[j].v;
+            LL uvCost = adj[j].w;
+
+            LL newDistance = dist[unode] + uvCost;
+            if(newDistance < dist[vnode])
             {
-                int vnode = adj[unode][i].to;
-                int vcost = adj[unode][i].cost;
-
-                int newDistance = ucost + vcost;
-
-                if(newDistance <  dist[vnode])
-                {
-                    dist[vnode] = newDistance;
-                    pq.push(Node(vnode,newDistance));
-                }
+                dist[vnode] = newDistance;
+                change = true;
             }
         }
+        if(!change) break;
     }
 }
 
 void clean()
 {
-    For(i,0,N-1) adj[i].clear();
+    adj.clear();
     mem(dist,0);
 }
 
@@ -134,22 +108,16 @@ int main()
         clean();
 
         sfl2(n,m);
-
         Edge e;
-
-        for(int i=1; i<=m; i++)
+        for(int i=0; i<m; i++)
         {
-            LL from, to, cost;
-            sfl3(from,to,cost);
-
-            e.to = to;
-            e.cost = cost;
-            adj[from].PB(e);
-            e.to = from;
-            adj[to].PB(e);
+            sfl3(e.u,e.v,e.w);
+            adj.PB(e);
+            swap(e.u,e.v);
+            adj.PB(e);
         }
 
-        dijkstra(1);
+        bf(1LL);
 
         if(dist[n] == 1e17) printf("Case %d: Impossible\n", tt);
         else printf("Case %d: %lld\n", tt , dist[n]);
@@ -168,4 +136,3 @@ int main()
 1 2 40
 
 */
-
