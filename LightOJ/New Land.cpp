@@ -128,5 +128,9 @@ int main()
 }
 
 /*
-https://lightoj.com/problem/new-land
+Link : https://lightoj.com/problem/new-land
+Sol : Calculate height for each row. Then,
+For each row, we take a range to calculate a area. Segment tree will give the minimum height and
+the index. That index divides the range into two parts and we have to calculate for that divided two range
+again in the same process.
 */
