@@ -101,19 +101,14 @@ void solve(int casenum)
     int n=s.size();
     buildSA(s,sa,n+1,130); //Important
     buildLCP(s,sa,n);
-    // for(int i=1;i<=n;i++) cerr<<sa[i]<<" "<<s.substr(sa[i])<<" "<<LCP[i]<<endl;
     
     LL ans = 0;
     for(int i=1; i<=n; i++)
     {
-        // if(LCP[i] == 0) ans += LCP[i];
-        // else
-        // {
-            LL amarLCP = LCP[i];
-            LL amarLen = n - sa[i];
-            LL subCnt = amarLen - amarLCP;
-            ans += subCnt;
-        // }
+        LL amarLCP = LCP[i];
+        LL amarLen = n - sa[i];
+        LL subCnt = amarLen - amarLCP;
+        ans += subCnt;
     }
     cout<<ans<<endl;
 }
