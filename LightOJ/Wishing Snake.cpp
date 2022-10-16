@@ -203,7 +203,7 @@ void solve(int casenum)
         }
     }
 
-    ///building the new graph (DAG) keeping every sccs as a node
+    /// Building the new graph (DAG) keeping every sccs as a node.
     vector <int> vec;
     for(auto x : edges)
     {
