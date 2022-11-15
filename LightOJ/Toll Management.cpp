@@ -209,12 +209,12 @@ int main()
 /*
 
 Link: https://lightoj.com/problem/toll-management
-Sol: As we need to output an edge cost which satisfies the constraints, we took an edge and validate it.
+Sol: As we need to output an edge cost which satisfies the constraints, we took every edge and validate it.
 One dijkstra from source and another one from destination.
-Let's say we took the an edge denoting u,v;
+Let's say we took an edge denoting u,v;
 So a shortest path from source to destination consisting that edge will be:
 cost to go from source to u + cost to go from destination to v + that edge cost.
 If this path cost satisfies our constraints then we will mark this one as an answer and from all these
-path we get, we need the minimum one.
+path whose satisfies our constraints, we need the maximum one.
 
 */
