@@ -139,11 +139,6 @@ void solve(int casenum)
     {
         cout<<tot-sum<<NL;
     }
-
-    For(i,1,n)
-    {
-
-    }
     sum=0;
 }
 
