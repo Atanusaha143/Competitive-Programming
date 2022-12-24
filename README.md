@@ -10,4 +10,4 @@ There are four basic steps in solving a problem:
 If you have successfully failed the four basics then you are most welcome to use this repository.
 But make sure that you understand the problem statement to compare your solutions with mine.
 
-Happy Coading!
+Happy Coding!
