@@ -62,62 +62,59 @@ const int N = 200 + 10;
 const int MOD = 1000000007;
 
 int n;
-int mPrefer[N][N],wPrefer[N][N],wPartner[N];
-bool mFree[N];
+int mPrefer[N][N],wPrefer[N][N],wPartner[N],mRank[N][N];
 
-bool wPrefersMOverM1(int w, int m, int m1)
+void genRank()
 {
-    int posM=-1,posM1=-1;
-    for(int i=1; i<=n; i++)
+    for(int i=n+1; i<=2*n; i++)
     {
-        if(wPrefer[w][i]==m) posM=i;
-        if(wPrefer[w][i]==m1) posM1=i;
-        if(posM!=-1 and posM1!=-1) break;
+        for(int j=1; j<=n; j++)
+        {
+            int m=wPrefer[i][j];
+            // for ith woman, the rank of man m is j
+            mRank[i][m]=j;
+        }
     }
-    if(posM<posM1) return true;
-    return false;
 }
 
 void genStableMarriage()
 {
-    int freeCnt=n;
-    while (freeCnt>0)
+    genRank();
+    
+    stack<int>freemen;
+    for(int i=1; i<=n; i++) freemen.push(i);
+    while (!freemen.empty())
     {
         // Pick the first free man who is not engaged yet
-        int m;
-        for(m=1; m<=n; m++)
-        {
-            if(!mFree[m])
-            {
-                break;
-            }
-        }
+        int m=freemen.top();
+
         // One by one go to all women according to m's preferences.
         // Here m is the picked free man
-        for(int i=1; i<=n and !mFree[m]; i++)
+        for(int i=1; i<=n; i++)
         {
             int w=mPrefer[m][i];
-            // w is free, hence w and m become
-            // partners (Note that the partnership maybe changed
-            // later). So we can say they are engaged not married
+            // w is free, hence w and m become partners
+            // Note that the partnership maybe changed later. 
+            // So we can say they are engaged not married
             if(wPartner[w]==0)
             {
                 wPartner[w]=m;
-                mFree[m]=true;
-                freeCnt--;
+                freemen.pop();
+                break;
             }
             else // If w is not free
             {
-                // Find current engagement of w
+                // m1 is the current partner of w
                 int m1=wPartner[w];
-                // If w prefers m over her current engagement m1,
+                // If w prefers m over m1,
                 // then break the engagement between w and m1 and
                 // engage m with w.
-                if(wPrefersMOverM1(w,m,m1))
+                if(mRank[w][m]<mRank[w][m1])
                 {
                     wPartner[w]=m;
-                    mFree[m]=true;
-                    mFree[m1]=false;
+                    freemen.pop();
+                    freemen.push(m1);
+                    break;
                 }
             }
         }
@@ -142,13 +139,13 @@ void clean(int n)
         {
             mPrefer[i][j]=0;
         }
-        mFree[i]=false;
     }
     for(int i=n+1; i<=2*n; i++)
     {
         for(int j=1; j<=n; j++)
         {
             wPrefer[i][j]=0;
+            mRank[i][j]=0;
         }
         wPartner[i]=0;
     }
@@ -183,7 +180,6 @@ void solve(int casenum)
     genStableMarriage();
     printSolution(casenum);
 }
-
 int main()
 {
     IOS;
